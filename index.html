@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Белая Дача — посуточная аренда двух домов</title>
+  <meta name="description" content="Два дома посуточно: Белый и Тёмный. Бассейн с подогревом, длинный стол, караоке и кинотеатр. Праздники, девичники, свадьбы, выходные с друзьями.">
+  
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Стили календаря (Flatpickr) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+  
+  <!-- Ваши основные стили -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= ШАПКА ================= -->
+  <header class="header">
+    <div class="container header__inner">
+      <!-- Логотип в шапке (изначально скрыт) -->
+      <a href="#" class="logo" id="headerLogo" style="opacity: 0; pointer-events: none;">
+        <span class="logo-part logo-part--dark">БЕЛАЯ</span><span class="logo-part logo-part--light">ДАЧА</span>
+      </a>
+      <nav class="nav">
+        <a href="#black-house">Тёмный дом</a>
+        <a href="#white-house">Белый дом</a>
+        <a href="#services">Дополнительно</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a href="#contact" class="btn btn--accent header__cta">Забронировать</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO: СПЛИТ + СЛАЙДЕР ================= -->
+  <section class="hero-split" id="hero">
+    <!-- Две половины фона -->
+    <div class="hero-split__half hero-split__half--light"></div>
+    <div class="hero-split__half hero-split__half--dark"></div>
+
+    <!-- Обертка для заголовка -->
+    <div class="hero-title-wrapper" id="heroTitleWrapper">
+      <h1 class="hero-split__title" id="heroTitle" aria-label="Белая Дача">
+        <span class="hero-split__title-word hero-split__title-word--light">БЕЛАЯ</span>
+        <span class="hero-split__title-word hero-split__title-word--dark">ДАЧА</span>
+      </h1>
+    </div>
+
+    <!-- Сетка: текст — фото — текст -->
+    <div class="hero-split__grid">
+      <!-- Левая колонка -->
+      <div class="hero-split__col hero-split__col--left">
+        <p class="hero-split__text">
+          Два дома для праздника — <strong>Белый</strong> и <strong>Тёмный</strong>.
+          Бассейн с подогревом, длинный стол на всю компанию, караоке и кинотеатр.
+        </p>
+      </div>
+
+      <!-- Центр: круглый слайдер -->
+      <div class="compare" id="compare">
+        <img src="img/white-1.png" alt="Белый дом" class="compare__img compare__img--white">
+        <img src="img/black-1.png" alt="Тёмный дом" class="compare__img compare__img--black">
+        <div class="compare__handle" id="compareHandle" role="slider"
+             aria-label="Сравнить дома" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+             tabindex="0">
+          <span class="compare__line"></span>
+          <span class="compare__grip">
+            <span class="compare__heart compare__heart--dark" aria-hidden="true">♥</span>
+            <span class="compare__divider" aria-hidden="true">|</span>
+            <span class="compare__heart compare__heart--light" aria-hidden="true">♥</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Правая колонка -->
+      <div class="hero-split__col hero-split__col--right">
+        <p class="hero-split__text">
+          Дни рождения, девичники, камерные свадьбы — или просто выходные с друзьями.
+        </p>
+      </div>
+    </div>
+
+    <!-- Кнопка -->
+    <div class="hero-split__actions">
+      <a href="#contact" class="btn btn--accent">Узнать свободные даты</a>
+    </div>
+  </section>
+
+  <!-- ================= ТЁМНЫЙ ДОМ ================= -->
+  <section id="black-house" class="house theme-dark">
+    <div class="container">
+      <div class="house__head">
+        <span class="tag tag--light">Дом №1</span>
+        <h2 class="house__title">Тёмный дом</h2>
+        <p class="house__desc">
+          Идеален для больших компаний: вмещает до 15 человек. Премиальный минимализм, всё для комфортного отдыха, включая постельное белье и посуду.
+        </p>
+      </div>
+
+      <div class="house__top">
+        <div class="slider" id="sliderBlack">
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <img src="img/black-1.png" alt="Тёмный дом — экстерьер" class="slider__slide">
+              <img src="img/black-2.jpg" alt="Тёмный дом — гостиная" class="slider__slide">
+              <img src="img/black-3.jpg" alt="Тёмный дом — спальня" class="slider__slide">
+              <img src="img/black-4.jpg" alt="Тёмный дом — кухня" class="slider__slide">
+			  <img src="img/black-5.jpg" alt="Тёмный дом — кухня" class="slider__slide">
+			  <img src="img/black-6.jpg" alt="Тёмный дом — кухня" class="slider__slide">
+			  <img src="img/black-7.jpg" alt="Тёмный дом — кухня" class="slider__slide">
+			  <img src="img/black-8.jpg" alt="Тёмный дом — кухня" class="slider__slide">
+			  <img src="img/black-9.jpg" alt="Тёмный дом — кухня" class="slider__slide">
+			  <img src="img/black-10.jpg" alt="Тёмный дом — кухня" class="slider__slide">
+            </div>
+          </div>
+          <button class="slider__btn slider__btn--prev" aria-label="Предыдущее фото">‹</button>
+          <button class="slider__btn slider__btn--next" aria-label="Следующее фото">›</button>
+          <div class="slider__dots" aria-label="Навигация по фото"></div>
+        </div>
+
+        <div class="house__video">
+          <video controls poster="img/black-poster.jpg" preload="none">
+            <source src="video/black-tour.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <ul class="features features--center">
+        <li><strong>до 15</strong> гостей</li>
+        <li><strong>+500 ₽</strong> за 16+ гостя (в сутки)</li>
+        <li><strong>Заезд 14:00</strong> / Выезд 11:00</li>
+        <li><strong>Полный набор</strong> (белье, посуда, полотенца)</li>
+      </ul>
+
+      <div class="price-row">
+        <div class="price-row__item">
+          <span class="price-row__label">Пн – Чт</span>
+          <span class="price-row__value">17 000 ₽</span>
+        </div>
+        <div class="price-row__item">
+          <span class="price-row__label">Пятница / Вс</span>
+          <span class="price-row__value">20 000 ₽</span>
+        </div>
+        <div class="price-row__item">
+          <span class="price-row__label">Суббота</span>
+          <span class="price-row__value">25 000 ₽</span>
+        </div>
+      </div>
+
+      <div class="house-info-grid">
+        <div class="house-info-item">
+          <h4>🎁 Включено в стоимость</h4>
+          <ul>
+            <li>Проживание до 15 гостей</li>
+            <li>Постельное белье, полотенца, посуда</li>
+            <li>Мангальная зона и шампуры</li>
+            <li>Зона для казана</li>
+          </ul>
+        </div>
+        
+        <div class="house-info-item">
+          <h4>💳 Дополнительно</h4>
+          <ul>
+            <li>16-й гость и далее: +500 ₽ / сутки (даже дневное пребывание)</li>
+            <li>Мытье посуды гостями самостоятельно или +1000 ₽ (услуга клининга)</li>
+          </ul>
+        </div>
+
+        <div class="house-info-item">
+          <h4>📜 Правила дома</h4>
+          <ul>
+            <li>Режим тишины на улице с 22:00</li>
+            <li>Запрещено: курить (включая одноразки), ходить в обуви, выносить белье, прыгать на креслах-мешках, принимать пищу в воде, взрывать пиротехнику.</li>
+            <li>Угли и розжиг привозят гости.</li>
+            <li>Мусор забирают с собой, нельзя мусорить на территории.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="house__cta">
+        <a href="#contact" class="btn btn--accent" data-house="black">Забронировать Тёмный дом</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= БЕЛЫЙ ДОМ ================= -->
+  <section id="white-house" class="house theme-light">
+    <div class="container">
+      <div class="house__head">
+        <span class="tag">Дом №2</span>
+        <h2 class="house__title">Белый дом</h2>
+        <p class="house__desc">
+          Светлые пространства, большая терраса, семейная атмосфера. Вмещает до 12 человек. Идеальный выбор для отдыха с детьми или дружеской компанией.
+        </p>
+      </div>
+
+      <div class="house__top house__top--reverse">
+        <div class="house__video">
+          <video controls poster="img/white-poster.jpg" preload="none">
+            <source src="video/white-tour.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="slider" id="sliderWhite">
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <img src="img/white-1.png" alt="Белый дом — экстерьер" class="slider__slide">
+              <img src="img/white-2.jpg" alt="Белый дом — гостиная" class="slider__slide">
+              <img src="img/white-3.jpg" alt="Белый дом — спальня" class="slider__slide">
+              <img src="img/white-4.jpg" alt="Белый дом — терраса" class="slider__slide">
+			  <img src="img/white-5.jpg" alt="Белый дом — терраса" class="slider__slide">
+			  <img src="img/white-6.jpg" alt="Белый дом — терраса" class="slider__slide">
+			  <img src="img/white-7.jpg" alt="Белый дом — терраса" class="slider__slide">
+			  <img src="img/white-8.jpg" alt="Белый дом — терраса" class="slider__slide">
+			  <img src="img/white-9.jpg" alt="Белый дом — терраса" class="slider__slide">
+            </div>
+          </div>
+          <button class="slider__btn slider__btn--prev" aria-label="Предыдущее фото">‹</button>
+          <button class="slider__btn slider__btn--next" aria-label="Следующее фото">›</button>
+          <div class="slider__dots" aria-label="Навигация по фото"></div>
+        </div>
+      </div>
+
+      <ul class="features features--center features--light">
+        <li><strong>до 12</strong> гостей</li>
+        <li><strong>+500 ₽</strong> за 13+ гостя (в сутки)</li>
+        <li><strong>Заезд 15:00</strong> / Выезд 12:00</li>
+        <li><strong>Полный набор</strong> (белье, посуда, полотенца)</li>
+      </ul>
+
+      <div class="price-row price-row--light">
+        <div class="price-row__item">
+          <span class="price-row__label">Пн – Чт</span>
+          <span class="price-row__value">14 000 ₽</span>
+        </div>
+        <div class="price-row__item">
+          <span class="price-row__label">Пятница / Вс</span>
+          <span class="price-row__value">16 000 ₽</span>
+        </div>
+        <div class="price-row__item">
+          <span class="price-row__label">Суббота</span>
+          <span class="price-row__value">18 000 ₽</span>
+        </div>
+      </div>
+
+      <div class="house-info-grid house-info-grid--light">
+        <div class="house-info-item">
+          <h4>🎁 Включено в стоимость</h4>
+          <ul>
+            <li>Проживание до 12 гостей</li>
+            <li>Постельное белье, полотенца, посуда</li>
+            <li>Мангальная зона и шампуры</li>
+            <li>Зона для казана</li>
+          </ul>
+        </div>
+        
+        <div class="house-info-item">
+          <h4>💳 Дополнительно</h4>
+          <ul>
+            <li>13-й гость и далее: +500 ₽ / сутки (даже дневное пребывание)</li>
+            <li>Мытье посуды гостями самостоятельно или +1000 ₽ (услуга клининга)</li>
+          </ul>
+        </div>
+
+        <div class="house-info-item">
+          <h4>📜 Правила дома</h4>
+          <ul>
+            <li>Режим тишины на улице с 22:00</li>
+            <li>Запрещено: курить (включая одноразки), ходить в обуви, вешать мокрые вещи на двери, играть в мяч в доме и на территории, ставить лавочки/столы на газон, прыгать на креслах-мешках, сидеть на бортах бассейна и принимать пищу в воде, взрывать пиротехнику.</li>
+            <li>Угли и розжиг привозят гости.</li>
+            <li>При нарушении правил залог не возвращается.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="house__cta">
+        <a href="#contact" class="btn btn--dark" data-house="white">Забронировать Белый дом</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ВСЁ ДЛЯ ОТДЫХА ================= -->
+  <section class="services theme-dark" id="services">
+    <div class="container">
+      <h2 class="section-title section-title--light">Всё для вашего отдыха</h2>
+      <div class="services__grid">
+        <div class="service">
+          <span class="service__icon">🏊</span>
+          <p>Бассейн с подогревом и подсветкой</p>
+        </div>
+        <!-- Баня -->
+        <div class="service">
+          <span class="service__icon">🔥</span>
+          <p class="service__title">Баня на дровах</p>
+          <span class="service__note">Белый дом · топит наш сотрудник</span>
+          <span class="service__price">1 000 ₽ / час</span>
+        </div>
+        <!-- Банный чан -->
+        <div class="service">
+          <span class="service__icon">🛁</span>
+          <p class="service__title">Банный чан на дровах</p>
+          <span class="service__note">Белый дом · только вместе с домом</span>
+          <span class="service__price">5 000 ₽</span>
+        </div>
+        <!-- Кинотеатр -->
+        <div class="service">
+          <span class="service__icon">🎬</span>
+          <p class="service__title">Кинотеатр и караоке</p>
+          <span class="service__note">Проектор под открытым небом</span>
+          <span class="service__price">Уточняйте</span>
+        </div>
+        <div class="service">
+          <span class="service__icon">🛜</span>
+          <p>Бесплатный Wi-Fi</p>
+        </div>
+        <div class="service">
+          <span class="service__icon">🅿️</span>
+          <p>Место под авто на территории</p>
+        </div>
+        <div class="service">
+          <span class="service__icon">🍽️</span>
+          <p>Длинный стол на всю компанию</p>
+        </div>
+        <div class="service">
+          <span class="service__icon">🔥</span>
+          <p>Мангальная зона с летней кухней</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ================= ГАЛЕРЕЯ АТМОСФЕРЫ ================= -->
+  <section class="gallery-section theme-light" id="amenities">
+    <div class="container">
+      <div class="gallery-section__head">
+        <h2 class="section-title">Атмосфера и детали</h2>
+        <p class="gallery-section__subtitle">Посмотрите, как у нас уютно</p>
+      </div>
+
+      <div class="photo-grid">
+        <!-- 1. Большое фото -->
+        <div class="photo-grid__item photo-grid__item--large">
+          <img src="img/amenities-1.jpg" alt="Бассейн с подогревом">
+          <div class="photo-grid__overlay">
+            <p class="photo-grid__quote">«Бассейн тёплый даже в -20, всё чисто и красиво»</p>
+            <span class="photo-grid__author">Кирилл Телешев</span>
+          </div>
+        </div>
+
+        <!-- 2. Вертикальное фото с отзывом -->
+        <div class="photo-grid__item photo-grid__item--tall">
+          <img src="img/amenities-3.jpg" alt="Зона отдыха">
+          <div class="photo-grid__overlay">
+            <p class="photo-grid__quote">«Отмечали день рождения, атмосфера супер!»</p>
+          </div>
+        </div>
+
+        <!-- 3. Горизонтальное фото -->
+        <div class="photo-grid__item photo-grid__item--wide">
+          <img src="img/amenities-2.jpg" alt="Спальня" style="object-position: center 60%;"> 
+        </div>
+
+        <!-- 4-6. Видео ячейки -->
+        <!-- Делаем это видео высоким (на 2 ячейки) -->
+        <div class="photo-grid__item photo-grid__item--tall">
+          <video src="video/amenities-vid-3.mp4" muted loop autoplay playsinline class="photo-grid__video"></video>
+          
+        </div>
+
+        <!-- Остальные два видео остаются маленькими -->
+        <div class="photo-grid__item">
+          <video src="video/amenities-vid-1.mp4" muted loop autoplay playsinline class="photo-grid__video"></video>
+          
+        </div>
+        
+        <div class="photo-grid__item">
+          <video src="video/amenities-vid-2.mp4" muted loop autoplay playsinline class="photo-grid__video"></video>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ОТЗЫВЫ ================= -->
+  <section id="reviews" class="reviews theme-dark">
+    <div class="container">
+      <div class="reviews__header">
+        <h2 class="section-title section-title--light">Пишут гости</h2>
+        <a href="https://yandex.ru/maps/org/belaya_dacha_temny_dom/90590242497/reviews/?ll=44.402404%2C48.650952&z=17" target="_blank" rel="noopener" class="rating-btn">
+          <div class="rating-btn__score">4,5</div>
+          <div class="rating-btn__info">
+            <div class="rating-btn__stars" aria-label="Рейтинг 4.5 из 5">★★★★★</div>
+            <div class="rating-btn__text">27 оценок на Яндекс Картах<br>«Хорошее место 2026»</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="reviews__grid">
+        <blockquote class="review">
+          <div class="review__head">
+            <strong class="review__author">Влада Шарова</strong>
+            <span class="review__date">17.03.26</span>
+          </div>
+          <div class="review__meta">
+            <span class="review__tag review__tag--2gis">2ГИС</span>
+            <span class="review__house">Белый дом</span>
+          </div>
+          <p class="review__text">«Отдыхали в этом чудесном доме несколько дней - остались в полном восторге! Большое спасибо арендодателю за гостеприимство, чёткую организацию и готовность оперативно помочь с любыми вопросами. Дом превзошёл все ожидания: очень уютный, чистый, со всем необходимым для комфортного проживания. Продумана каждая деталь - от бытовой техники до посуды и полотенец. Особенно порадовала обстановка: стильная, но при этом домашняя и расслабляющая. Отдельный восторг - тёплый бассейн! Вода идеальной температуры, чистая и прозрачная. Плавать в нём было одно удовольствие...»</p>
+        </blockquote>
+        <blockquote class="review">
+          <div class="review__head">
+            <strong class="review__author">Елена Макеева</strong>
+            <span class="review__date">25.05.26</span>
+          </div>
+          <div class="review__meta">
+            <span class="review__tag review__tag--2gis">2ГИС</span>
+            <span class="review__house">Белый дом</span>
+          </div>
+          <p class="review__text">«Отдыхали компанией, отмечали день рождения. Максимально прекрасный праздник получился, красивый дом, все чисто, продумано до мелочей, стильно и современно. Что в доме, что на улице прекрасная атмосфера, все выполнено очень красиво. Прекрасная хозяйка, все показала рассказала, была на связи. Бассейн шикарный, всем очень понравилось. Уже посоветовали друзьям и сами будем бронировать снова!»</p>
+        </blockquote>
+        <blockquote class="review">
+          <div class="review__head">
+            <strong class="review__author">Илья Дмитриевич</strong>
+            <span class="review__date">19.03.26</span>
+          </div>
+          <div class="review__meta">
+            <span class="review__tag review__tag--2gis">2ГИС</span>
+            <span class="review__house">Чёрный дом</span>
+          </div>
+          <p class="review__text">«Замечательный новый дом. Обычно отдыхали в Белом доме. Но решили в этот раз отдохнуть в этом, вода в бассейне шикарная! Дом просторный - новый. Постельное, полотенца, ванные комнаты имеют приятный аромат.»</p>
+        </blockquote>
+        <blockquote class="review">
+          <div class="review__head">
+            <strong class="review__author">Stanislav Viktorovich</strong>
+            <span class="review__date">13.08.25</span>
+          </div>
+          <div class="review__meta">
+            <span class="review__tag review__tag--yandex">Яндекс</span>
+            <span class="review__house">Белый дом</span>
+          </div>
+          <p class="review__text">«Супер современный классный дом! Все есть для отличного отдыха, бассейн просто пушка!!!!! Водичка теплая ночью подсветка.»</p>
+        </blockquote>
+        <blockquote class="review">
+          <div class="review__head">
+            <strong class="review__author">Аракси Абраамян</strong>
+            <span class="review__date">10.02.26</span>
+          </div>
+          <div class="review__meta">
+            <span class="review__tag review__tag--yandex">Яндекс</span>
+            <span class="review__house">Белый дом</span>
+          </div>
+          <p class="review__text">«Отмечали в этом чудесном доме мой день рождения, и остались в полном восторге! Внутри невероятно комфортно и уютно, а самое главное для нас — идеальная чистота. Отдельное спасибо хочется сказать хозяйке: она просто наипрекраснейшая девушка!»</p>
+        </blockquote>
+        <blockquote class="review">
+          <div class="review__head">
+            <strong class="review__author">Екатерина Романова</strong>
+            <span class="review__date">05.10.25</span>
+          </div>
+          <div class="review__meta">
+            <span class="review__tag review__tag--yandex">Яндекс</span>
+            <span class="review__house">Чёрный дом</span>
+          </div>
+          <p class="review__text">«Отличный дом! Очень понравился хороший и современный ремонт, всё чисто, уютно и продумано до мелочей. В доме есть все необходимое. Хозяева доброжелательные, отзывчивые и приятные в общении. Видно, что к дому относятся с заботой.»</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ФОРМА БРОНИРОВАНИЯ И КАРТА ================= -->
+  <section id="contact" class="contact theme-light">
+    <div class="container contact__inner">
+      
+      <!-- 1. ЛЕВАЯ КОЛОНКА: ФОРМА -->
+      <div class="contact__form-col">
+        <form class="form" id="bookingForm" novalidate>
+          <h3 class="form__title">Забронировать</h3>
+          
+          <label>
+            <span>Какой дом</span>
+            <select name="house" required>
+              <option value="any">Любой</option>
+              <option value="black">Тёмный дом</option>
+              <option value="white">Белый дом</option>
+            </select>
+          </label>
+          
+          <label>
+            <span>Дата заезда</span>
+            <input type="date" name="date" required placeholder="Выберите дату">
+          </label>
+
+          <label>
+            <span>Комментарий</span>
+            <textarea name="message" rows="2" placeholder="Гости, пожелания"></textarea>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" required>
+            <span>Согласен с обработкой данных</span>
+          </label>
+
+          <button type="submit" class="btn btn--dark btn--block">Отправить</button>
+          <p class="form__note" id="formNote"></p>
+          
+          <a href="#" id="maxLink" target="_blank" style="display: none;"></a>
+        </form>
+      </div>
+
+      <!-- 2. ЦЕНТРАЛЬНАЯ КОЛОНКА: ТЕКСТ И КНОПКИ -->
+      <div class="contact__info-col">
+        <h2 class="section-title">Контакты</h2>
+        <p class="contact__desc">
+          Остались вопросы? Звоните в любое время — ответим на ваши вопросы, подскажем, какой дом свободен на ваши даты, какие есть доп. услуги.
+        </p>
+        
+        <div class="contact__address">
+          <strong>Волгоград, Советский район,<br>Нефтяник-2, ул. Джамбула Джабаева, 44/107</strong>
+        </div>
+
+        <div class="contact-links">
+          <a href="tel:+79093809909" class="contact-links__item contact-links__item--phone">+7 (909) 380-99-09</a>
+          <a href="https://t.me/+79093809909" target="_blank" rel="noopener" class="contact-links__item">Телеграм</a>
+          <a href="https://vk.ru/belayadacha34" target="_blank" rel="noopener" class="contact-links__item">ВКонтакте</a>
+          <a href="https://max.ru/u/f9LHodD0cOLI9vXYVt76gIYuasLwhXK6vzWWwQRZeLZw7CpAM_vcWMfMFR4" target="_blank" rel="noopener" class="contact-links__item">Макс</a>
+          <a href="https://yandex.ru/maps/?rtext=~48.650952,44.402404&rtt=auto" target="_blank" rel="noopener" class="contact-links__item contact-links__item--route">Маршрут</a>
+        </div>
+      </div>
+
+      <!-- 3. ПРАВАЯ КОЛОНКА: КАРТА -->
+      <div class="contact__map-col">
+        <div class="map-circle">
+          <iframe 
+            src="https://yandex.ru/map-widget/v1/?ll=44.402404%2C48.650952&z=16&pt=44.402404,48.650952,pm2rdm"
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            allowfullscreen="true"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ФУТЕР ================= -->
+  <footer class="footer theme-dark">
+    <div class="container footer__inner">
+      <div>
+        <p class="logo">Белая Дача</p>
+        <p class="footer__muted">Волгоград</p>
+      </div>
+      <div class="footer__contacts">
+        <a href="tel:+79093809909">+7 (909) 380-99-09</a>
+        <a href="https://vk.ru/belayadacha34" target="_blank" rel="noopener">Группа ВК</a>
+        <a href="#privacy" id="privacyLink">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- МОДАЛЬНОЕ ОКНО ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ -->
+  <div class="modal" id="privacyModal">
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Закрыть">&times;</button>
+      <h2 class="modal__title">Политика конфиденциальности</h2>
+      <div class="modal__text">
+        <p><strong>Настоящая Политика конфиденциальности</strong> действует в отношении всей информации, которую сайт «Белая Дача» может получить о Пользователе.</p>
+        <h3>1. Какие данные мы собираем</h3>
+        <p>При заполнении формы обратной связи на Сайте Пользователь предоставляет следующие данные: дата бронирования и комментарий (по желанию).</p>
+        <h3>2. Цели сбора данных</h3>
+        <p>Данные собираются исключительно для связи с Пользователем с целью уточнения деталей бронирования и отправки подтверждения заявки.</p>
+        <h3>3. Передача данных третьим лицам</h3>
+        <p>Персональные данные Пользователей не передаются третьим лицам, за исключением случаев, предусмотренных законодательством РФ.</p>
+        <h3>4. Хранение и защита данных</h3>
+        <p>Администрация Сайта принимает необходимые организационные и технические меры для защиты персональной информации Пользователя от неправомерного доступа и распространения.</p>
+        <h3>5. Отзыв согласия</h3>
+        <p>Пользователь может в любой момент отозвать свое согласие, связавшись с нами через группу ВКонтакте.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Лайтбокс -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" aria-label="Закрыть">&times;</button>
+    <img src="" alt="" class="lightbox__img">
+  </div>
+
+  <!-- Подключение скриптов -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
